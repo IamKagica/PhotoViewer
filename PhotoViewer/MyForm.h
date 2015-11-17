@@ -1,4 +1,5 @@
 #pragma once
+#include "PhotoList.h"
 
 namespace PhotoViewer {
 
@@ -88,6 +89,7 @@ namespace PhotoViewer {
 			this->Next->TabIndex = 0;
 			this->Next->Text = L"Next";
 			this->Next->UseVisualStyleBackColor = true;
+			this->Next->Click += gcnew System::EventHandler(this, &MyForm::NextClick);
 			// 
 			// Prev
 			// 
@@ -106,7 +108,7 @@ namespace PhotoViewer {
 			this->Add->TabIndex = 2;
 			this->Add->Text = L"Add";
 			this->Add->UseVisualStyleBackColor = true;
-			this->Add->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->Add->Click += gcnew System::EventHandler(this, &MyForm::AddClick);
 			// 
 			// Name
 			// 
@@ -147,7 +149,7 @@ namespace PhotoViewer {
 			// 
 			this->pictureBox1->Location = System::Drawing::Point(195, 12);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(300, 286);
+			this->pictureBox1->Size = System::Drawing::Size(300, 300);
 			this->pictureBox1->TabIndex = 7;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -155,7 +157,7 @@ namespace PhotoViewer {
 			// 
 			this->pictureBox2->Location = System::Drawing::Point(549, 97);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(127, 125);
+			this->pictureBox2->Size = System::Drawing::Size(125, 125);
 			this->pictureBox2->TabIndex = 8;
 			this->pictureBox2->TabStop = false;
 			// 
@@ -163,7 +165,7 @@ namespace PhotoViewer {
 			// 
 			this->pictureBox3->Location = System::Drawing::Point(12, 97);
 			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(126, 125);
+			this->pictureBox3->Size = System::Drawing::Size(125, 125);
 			this->pictureBox3->TabIndex = 9;
 			this->pictureBox3->TabStop = false;
 			// 
@@ -192,9 +194,19 @@ namespace PhotoViewer {
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+/*	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		
 	}
 	private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-	}
+	}*/
+private: System::Void AddClick(System::Object^  sender, System::EventArgs^  e) 
+{
+	PhotoList One;
+	One.addPhoto("C:\\Users\\sinphi000\\Documents\\Visual Studio 2015\\Projects\\PhotoViewer\\PhotoViewer\\New folder");
+}
+
+private: System::Void NextClick(System::Object^  sender, System::EventArgs^  e) 
+{
+}
 };
 }

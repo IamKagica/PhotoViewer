@@ -3,7 +3,9 @@
 #include <iostream>
 #include <string>
 
-struct photoCar {
+struct photoCar 
+{
+	std::string address;
 	photoCar *next;
 	photoCar *prev;
 };
@@ -17,6 +19,7 @@ private:
 public:
 	PhotoList();
 	~PhotoList();
+	void start();
 	void removePhoto(int); //Removes element at given pos
 	void addPhoto(std::string); // Adds to the end of the list
 	void changePhoto(int, std::string); //Inserts the value at the given index
