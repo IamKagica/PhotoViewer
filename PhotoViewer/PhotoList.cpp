@@ -19,11 +19,19 @@ void PhotoList::addPhoto(std::string value)
 {
 	photoCar *newCar = new photoCar;
 	newCar->address = value;
-	while (head->next != 0)
+	if (head != 0)
 	{
-		head = head->next;
+		while (head->next != 0)
+		{
+			head = head->next;
+		}
+		newCar = head->next;
+		newCar->address = value;
 	}
-	newCar = head->next;
+	else
+	{
+		newCar->address = value;
+	}
 
 }
 
@@ -45,7 +53,5 @@ double PhotoList::get(int pos)
 
 void PhotoList::start()
 {
-	head = new photoCar;
-	head->next = 0;
-	head->address = "C:\\Users\\sinphi000\\Documents\\Visual Studio 2015\\Projects\\PhotoViewer\\PhotoViewer\\New folder\\DriverCPP1.png";
+
 }

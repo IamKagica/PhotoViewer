@@ -1,5 +1,6 @@
 #pragma once
 #include "PhotoList.h"
+#include <string>
 
 namespace PhotoViewer {
 
@@ -9,6 +10,7 @@ namespace PhotoViewer {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	PhotoList One;
 
 	/// <summary>
 	/// Summary for MyForm
@@ -184,7 +186,7 @@ namespace PhotoViewer {
 			this->Controls->Add(this->Add);
 			this->Controls->Add(this->Prev);
 			this->Controls->Add(this->Next);
-			this->Name = L"MyForm";
+			this->Name = Name;
 			this->Text = L"MyForm";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
@@ -201,8 +203,8 @@ namespace PhotoViewer {
 	}*/
 private: System::Void AddClick(System::Object^  sender, System::EventArgs^  e) 
 {
-	PhotoList One;
-	One.addPhoto("C:\\Users\\sinphi000\\Documents\\Visual Studio 2015\\Projects\\PhotoViewer\\PhotoViewer\\New folder");
+	std::string addAddress = /* A miracle happens and then...it doesn't work...*/ this->textBox1->Text;
+	One.addPhoto(addAddress); //C:\\Users\\sinphi000\\Documents\\Visual Studio 2015\\Projects\\PhotoViewer\\PhotoViewer\\New folder
 }
 
 private: System::Void NextClick(System::Object^  sender, System::EventArgs^  e) 
